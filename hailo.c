@@ -1,97 +1,65 @@
 #include<stdio.h>
-#define N 10
+#include<math.h>
+int two_different_ansewer(float a,float b,float c);
+int one_ansewer(float a,float b,float c);
+int no_ansewer(float a, float b,float c);
+
 int main()
 {
-    int a[N],b,j,t,i,n,m;
-	n=1;
-	for(i=0;i<N;i++)
-    scanf("%d",a+i);
-	b=a[N-1];
-	for(j=0;j<N;j++)
+    float   a,b,c;
+    scanf("%f %f %f",&a,&b,&c);
+	if(b*b-4*a*c>0)
 	{
-		if((b>a[j-1]&&b<a[j])||(b>a[j]&&b<a[j-1]))
-		{
-			t=j;
-			m=a[j];
-			a[j]=b;
-			for(i=9;i>t+1;i--)
-			{
-				a[i]=a[i-1];
-			}
-			a[t+1]=m;
-		}	
+		two_different_ansewer(a,b,c);
+	} 
+	else if(b*b-4*a*c==0)
+	{
+		one_ansewer(a,b,c);
 	}
-	for(b=0;b<10;b++)
-	printf("%d\n",a[b]);
-	
-	
+	else if(b*b-4*a*c<0)
+	{
+		no_ansewer(a,b,c);	
+	}
+
     return 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#if 0
-#include <stdio.h>
-#include <stdlib.h>
-struct tong{
-char name[11];
-char birthday[11];
-char sex;
-char gnum[17];
-char num[17];
-};
-void input_file(struct tong p[],int n);
-void output_file(struct tong  q[],int n);
-
-int main()
+int two_different_ansewer(float a,float b,float c)
 {
-	int n,i;
-	struct tong t[n];
-	scanf("%d",&n);
-	
-	input_file(t,n);
-	output_file(t,n);
-	
+	double x1,x2;
+	float m;
+	m=-b/(2*a);
+	x1=sqrt(b*b-4*a*c)/(2*a);
+	x2=sqrt(b*b-4*a*c)/(2*a);
+
+	printf("x1=%f-%.4f",m,x1);
+	printf("x2=%f+%.4f",m,x2);
+
 	return 0;
 }
-void input_file(struct tong p[], int n)
-{
-	int i;
-	for(i=0;i<n;i++)
-	{
-		scanf("%s%s%c%s%s",p[i].name,p[i].birthday,p[i].sex,p[i].gnum,p[i].num);
-	}
+
+int one_ansewer(float a,float b,float c)
+{double x1,x2;
+	float m;
+	m=-b/(2*a);
+	x1=sqrt(b*b-4*a*c)/(2*a);
+	x2=sqrt(b*b-4*a*c)/(2*a);
+
+	printf("x1=%.3f+%.4f  ",m,x1);
+	printf("x2=%.3f-%.4f ",m,x2);
+	return 0;
 }
 
-void output_file(struct tong q[], int n)
-{
-	int m,j;
-	scanf("%d",&m);
-	int a[m];
-	for(j=0;j<m;j++)
-	{if(a[j]>=0&&a[j]<n)
-	{
-		printf("%s %s %s %c %s\n",q[a[j]].name,q[a[j]]num,q[a[j]].gnum,q[a[j]].sex,q[a[j]].birthday);
-	}else
-	{
-		printf("Not Found\n");
-	}
-	}
+int no_ansewer(float a,float b,float c)
+{double x1,x2;
+	float m,n;
+	m=-b/(2*a);
+	n=-(b*b-4*a*c);
+	x1=+sqrt(n)/(2*a);
+	x2=sqrt(n)/( 2*a);
+	
+	printf("x1=%.3f+%.3fi ",m,x1);
+	printf("x2=%.3f-%.3fi ",m,x2);
+
+	return 0;
 }
-#endif
-
-
-
