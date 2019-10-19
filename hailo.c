@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <stdio.h>
 #include <stdlib.h>
 #define N 10
@@ -31,8 +32,21 @@ void input_file(struct tong p[], int n)
 	{
 		scanf("%s%s %c%s%s",p[i].name,p[i].birthday,&p[i].sex,p[i].gnum,p[i].num); //%s %c此处中间一定要有空格
 	}
+=======
+#include<stdio.h>
+int prime(int a);
+int main()
+{
+    int a;
+    scanf("%d",&a);
+	prime(a);
+    return 0;
+>>>>>>> cf293c29bd3abb02f655a0a237602f29c6549faf
 }
+int prime(int a)
+{	int i;
 
+<<<<<<< HEAD
 void output_file(struct tong q[], int n)
 {	
 	int a[N];
@@ -78,3 +92,16 @@ int main()
     return 0;
 }
 #endif 
+=======
+	for(i=2;i<a;i++)
+	{
+		if(a%i==0)
+		{printf("not prime.");break;}
+	}
+	if(i==a)
+	{	
+		printf("prime");
+	}
+	return 0;
+}
+>>>>>>> cf293c29bd3abb02f655a0a237602f29c6549faf
