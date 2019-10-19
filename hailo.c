@@ -1,107 +1,16 @@
-<<<<<<< HEAD
-#include <stdio.h>
-#include <stdlib.h>
-#define N 10
-struct tong{
-char name[11];
-char birthday[11];
-char sex;
-char gnum[17];
-char num[17]; 
-};
-void input_file(struct tong p[],int n);
-void output_file(struct tong  q[],int n);
-
-int main()
-{
-	int n;
-	struct tong t[N];
-
-	scanf("%d",&n);
-
-	input_file(t,n);
-	output_file(t,n);
-
-	return 0;
-}
-void input_file(struct tong p[], int n)
-{
-	int i,a;
-	
-	for(i=0;i<n;i++)
-	{
-		scanf("%s%s %c%s%s",p[i].name,p[i].birthday,&p[i].sex,p[i].gnum,p[i].num); //%s %c此处中间一定要有空格
-	}
-=======
 #include<stdio.h>
-int prime(int a);
 int main()
 {
-    int a;
-    scanf("%d",&a);
-	prime(a);
-    return 0;
->>>>>>> cf293c29bd3abb02f655a0a237602f29c6549faf
-}
-int prime(int a)
-{	int i;
+    int a[3][3],b[3][3],c,cc,d,dd;
+    for(c=0;c<3;c++)
+		for(cc=0;cc<3;cc++)
+			scanf("%d",&a[c][cc]);
 
-<<<<<<< HEAD
-void output_file(struct tong q[], int n)
-{	
-	int a[N];
-	int m,j,i,b;
-	scanf("%d",&m);
-	for(b=0;b<m;b++)
+	for(d=0;d<3;d++)
 	{
-		scanf("%d",&a[b]);
+		for(dd=0;dd<3;dd++)
+			printf("%d ",a[dd][d]);
+		printf("\n");
 	}
-	for(j=0; j<m; j++)
-	{
-		if(a[j]>=0 && a[j]<n)
-		{
-			printf("%s%s%c%s%s\n",q[a[j]].name,q[a[j]].birthday,q[a[j]].sex,q[a[j]].gnum,q[a[j]].num);
-		}
-		else
-		{
-			printf("Not Found\n");
-		}
-	}
-}
-
-
-#if 0
-#include<stdio.h>
-#define N 10
-int main()
-{
-    int a[N],b,j,t,i;
-	for(i=0;i<N;i++)
-    scanf("%d",a+i);
-	b=a[N-1];
-	for(j=0;j<N;j++)
-	{
-		if(b>a[j])
-		{
-			t=a[j+1];
-			a[j+1]=a[j];
-		}
-	}
-	for(j=0;j<N;j++)
-	printf("%d\n",a[j]);
     return 0;
 }
-#endif 
-=======
-	for(i=2;i<a;i++)
-	{
-		if(a%i==0)
-		{printf("not prime.");break;}
-	}
-	if(i==a)
-	{	
-		printf("prime");
-	}
-	return 0;
-}
->>>>>>> cf293c29bd3abb02f655a0a237602f29c6549faf
