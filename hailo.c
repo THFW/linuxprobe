@@ -1,49 +1,57 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define N 10
 struct tong{
 char name[11];
 char birthday[11];
 char sex;
 char gnum[17];
-char num[17];
+char num[17]; 
 };
 void input_file(struct tong p[],int n);
 void output_file(struct tong  q[],int n);
 
 int main()
 {
-	
-	struct tong t[n];
-	int n,i;
+	int n;
+	struct tong t[N];
+
 	scanf("%d",&n);
-	
+
 	input_file(t,n);
 	output_file(t,n);
-	
+
 	return 0;
 }
 void input_file(struct tong p[], int n)
 {
-	int i;
+	int i,a;
+	
 	for(i=0;i<n;i++)
 	{
-		scanf("%s%s%c%s%s",p[i].name,p[i].birthday,p[i].sex,p[i].gnum,p[i].num);
+		scanf("%s%s %c%s%s",p[i].name,p[i].birthday,&p[i].sex,p[i].gnum,p[i].num);
 	}
 }
 
 void output_file(struct tong q[], int n)
-{
-	int m,j;
+{	
+	int a[N];
+	int m,j,i,b;
 	scanf("%d",&m);
-	int a[m];
-	for(j=0;j<m;j++)
-	{if(a[j]>=0&&a[j]<n)
+	for(b=0;b<m;b++)
 	{
-		printf("%s %s %s %c %s\n",q[a[j]].name,q[a[j]]num,q[a[j]].gnum,q[a[j]].sex,q[a[j]].birthday);
-	}else
-	{
-		printf("Not Found\n");
+		scanf("%d",&a[b]);
 	}
+	for(j=0; j<m; j++)
+	{
+		if(a[j]>=0 && a[j]<n)
+		{
+			printf("%s%s%c%s%s\n",q[a[j]].name,q[a[j]].birthday,q[a[j]].sex,q[a[j]].gnum,q[a[j]].num);
+		}
+		else
+		{
+			printf("Not Found\n");
+		}
 	}
 }
 
@@ -69,4 +77,4 @@ int main()
 	printf("%d\n",a[j]);
     return 0;
 }
-#endif
+#endif 
