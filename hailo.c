@@ -29,7 +29,7 @@ void input_file(struct tong p[], int n)
 	
 	for(i=0;i<n;i++)
 	{
-		scanf("%s%s %c%s%s",p[i].name,p[i].birthday,&p[i].sex,p[i].gnum,p[i].num);
+		scanf("%s%s %c%s%s",p[i].name,p[i].birthday,&p[i].sex,p[i].gnum,p[i].num); //%s %c此处中间一定要有空格
 	}
 }
 
