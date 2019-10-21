@@ -1,23 +1,13 @@
 #include<stdio.h>
 int main()
 {
-	int i,j;
-	char a[26],b[26];
-	scanf("%s",a);
-	for(i=0;i<26;i++)
-	{
-		if((a[i]=='a')||(a[i]=='e')||(a[i]=='i')||(a[i]=='o')||(a[i]=='u'))
-		{
-			b[i]=a[i];
-		}		
-	}
-	for(j=0;j<26;j++)
-	{	
-		if((b[j]=='a')||(b[j]=='e')||(b[j]=='i')||(b[j]=='o')||(b[j]=='u'))
-		{
-			printf("%c",b[j]);
-		}
-	}
+    int a,b,c,d,e;
+	scanf("%d",&a);
+	b=a%10;
+	c=(a/10)%10;
+	d=a/100%10;
+	e=a/1000%10;
+	printf("%d %d %d %d",e,d,c,b);
 
     return 0;
 }
